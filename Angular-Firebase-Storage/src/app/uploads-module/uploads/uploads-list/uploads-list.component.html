@@ -1,0 +1,6 @@
+<h2>List of Uploaded Files:</h2>
+
+<div *ngFor="let upload of uploads | async">
+  <upload-detail [upload]='upload'></upload-detail>
+</div>
+<hr>

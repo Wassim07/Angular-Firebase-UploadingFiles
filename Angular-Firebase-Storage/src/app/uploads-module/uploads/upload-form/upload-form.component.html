@@ -1,0 +1,28 @@
+<div *ngIf="currentUpload">
+  <mat-progress-bar [color]="primary" [value]="currentUpload?.progress">
+  </mat-progress-bar>
+  Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
+</div>
+
+
+<div class="box">
+  <h2>Upload one File</h2>
+
+  <label>
+    <input type="file" class="button" (change)="detectFiles($event)">
+  </label>
+  <button class="btn-primary" [disabled]="!selectedFiles" (click)="uploadOneFile()">
+    Upload
+  </button>
+
+  <hr>
+
+  <h3>Upload Multiple Files </h3>
+
+  <label>
+    <input type="file" class="button" (change)="detectFiles($event)" multiple>
+  </label>
+  <button class="btn-primary" [disabled]="!selectedFiles" (click)="uploadMultipleFiles()">
+    Upload
+  </button>
+</div>
